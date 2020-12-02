@@ -91,7 +91,6 @@ GameObject:
   - component: {fileID: 8762717434353886742}
   - component: {fileID: 8762717434353886729}
   - component: {fileID: 8762717434353886728}
-  - component: {fileID: 1954502125668857712}
   m_Layer: 5
   m_Name: Ability
   m_TagString: Untagged
@@ -200,16 +199,3 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1954502125668857712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8762717434353886730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93c508d41a910d349a81bd8318fbc7b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pokemonRef: {fileID: 0}

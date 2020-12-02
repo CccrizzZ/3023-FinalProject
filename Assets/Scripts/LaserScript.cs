@@ -13,8 +13,8 @@ public class LaserScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x + 2.2f * Time.deltaTime, transform.position.y, transform.position.z);
-        transform.position = new Vector3(transform.position.x , transform.position.y + 1.0f * Time.deltaTime, transform.position.z);
+        transform.position = new Vector3(transform.position.x + 4.4f * Time.deltaTime, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x , transform.position.y + 2.0f * Time.deltaTime, transform.position.z);
     
         if (transform.position.y >= 1.5f )
         {
