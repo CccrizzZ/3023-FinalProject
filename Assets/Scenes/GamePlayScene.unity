@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: MusicMgrRef
       value: 
       objectReference: {fileID: 843135211}
+    - target: {fileID: 5674359165039506521, guid: 1a9de5015e9a8b54e93bc0b1ffceacb8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5674359165039506522, guid: 1a9de5015e9a8b54e93bc0b1ffceacb8, type: 3}
       propertyPath: m_SortingOrder
       value: 2
@@ -10135,6 +10139,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1808626285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808626282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b6f0a3bdbbc4156961719b79a6727d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
+  rigidBody: {fileID: 1808626284}
 --- !u!70 &1808626288
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -10151,3 +10169,37 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00000002076921, y: -0.17422478}
   m_Size: {x: 0.43750006, y: 0.18280108}
   m_Direction: 1
+--- !u!95 &1808626290
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808626282}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2e4b48617d3ce4d23ae45c59627030ef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1808626291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808626282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f17071bb7e9d4d37866e62e33f8b7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1808626290}
+  rb: {fileID: 1808626284}
+  walkDirection: 2
