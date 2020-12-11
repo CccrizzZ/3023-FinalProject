@@ -17,4 +17,6 @@ public class PlayerCharacterController : MonoBehaviour
         movementVector *= speed;
         rigidBody.velocity = movementVector;
     }
+
+    
 }

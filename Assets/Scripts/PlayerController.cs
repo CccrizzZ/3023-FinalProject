@@ -11,15 +11,17 @@ public class PlayerController : MonoBehaviour
     bool isMoving;
 
     bool transition;
-    bool canMove;
+    public bool canMove;
     float x;
     float y;
 
+    [SerializeField]
+    Rigidbody2D rigidBody;
 
-
+    float speed = 1.0f;
     public GameObject MusicMgrRef;
     MusicManager AUmgr;
-
+    Vector2 movementVector;
     void Awake() {
         AUmgr = MusicMgrRef.GetComponent<MusicManager>();
         transition = false;      
@@ -46,33 +48,37 @@ public class PlayerController : MonoBehaviour
         // if player can move set the x and y velocity
         if (canMove)
         {
-            x = Input.GetAxis("Horizontal");
-            y = Input.GetAxis("Vertical");
+            movementVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            movementVector *= speed;
+            rigidBody.velocity = movementVector;  
+            isMoving = true;
             
         }
         else
         {
-            x = 0;
-            y = 0;
+            rigidBody.velocity = Vector2.zero;
+            isMoving = false;
+            // x = 0;
+            // if
         }
 
 
-        // move the player
-        transform.position = new Vector3(transform.position.x + x * Time.deltaTime, transform.position.y, transform.position.z);
-        transform.position = new Vector3(transform.position.x , transform.position.y + y * Time.deltaTime, transform.position.z);
-    
+        // // move the player
+        // transform.position = new Vector3(transform.position.x + x * Time.deltaTime, transform.position.y, transform.position.z);
+        // transform.position = new Vector3(transform.position.x , transform.position.y + y * Time.deltaTime, transform.position.z);
+
   
 
 
         // determine if the player is moving
-        if(x!=0 || y!=0)
-        {
-            isMoving = true;
-        }
-        else
-        {
-            isMoving = false;
-        }
+        // if(x!=0 || y!=0)
+        // {
+        //     isMoving = true;
+        // }
+        // else
+        // {
+        //     isMoving = false;
+        // }
 
 
 
@@ -107,8 +113,10 @@ public class PlayerController : MonoBehaviour
         {
             if (Time.frameCount % 60 == 0)
             {
+                Debug.Log("walking");
                 if (Random.Range(0, 10000) <= 200)
                 {
+                    Debug.Log("Encounterd");
                     canMove = false;
                     StartCoroutine(TransitionToBattleScene(2.0f));
                 }

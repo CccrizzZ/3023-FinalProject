@@ -22,6 +22,8 @@ public class CharacterWalkAnimController : MonoBehaviour
     [SerializeField]
     CardinalDirection walkDirection = CardinalDirection.SOUTH;
 
+    public PlayerController pController;
+
     // Update is called once per frame
     void Update()
     {
@@ -30,7 +32,7 @@ public class CharacterWalkAnimController : MonoBehaviour
        Vector2 vel = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         // if we are moving at all
-        bool isWalking = vel.magnitude > float.Epsilon;
+        bool isWalking = vel.magnitude > float.Epsilon && pController.canMove;
 
        if (isWalking)
        {
