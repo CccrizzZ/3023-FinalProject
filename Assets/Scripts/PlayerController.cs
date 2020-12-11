@@ -62,31 +62,6 @@ public class PlayerController : MonoBehaviour
             // if
         }
 
-
-        // // move the player
-        // transform.position = new Vector3(transform.position.x + x * Time.deltaTime, transform.position.y, transform.position.z);
-        // transform.position = new Vector3(transform.position.x , transform.position.y + y * Time.deltaTime, transform.position.z);
-
-  
-
-
-        // determine if the player is moving
-        // if(x!=0 || y!=0)
-        // {
-        //     isMoving = true;
-        // }
-        // else
-        // {
-        //     isMoving = false;
-        // }
-
-
-
-
-
-
-
-
         // don't move if in battle scene
         if(SceneManager.GetActiveScene().name == "GamePlayScene")
         {
@@ -104,10 +79,6 @@ public class PlayerController : MonoBehaviour
             AUmgr.PlayBattleSceneMusic();
         } 
 
-
-
-
-
         // random encounter mechanism
         if (Physics2D.OverlapCircle(transform.position, 0.1f, GrassLayer) != null && isMoving)
         {
@@ -122,10 +93,18 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        
+    }
 
 
-
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("entered collision");
+        if (collision.gameObject.name == "Oponent")
+        {
+            Debug.Log("detected oponent");
+            StartCoroutine(TransitionToBattleScene(1.0f));
+        }
     }
 }
 
