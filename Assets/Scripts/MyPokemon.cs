@@ -142,4 +142,23 @@ public class MyPokemon : MonoBehaviour
         }
         
     }
+
+
+    //abilities that can be randomly gained if winning the battle
+    public void A5()
+    {
+
+    }
+
+
+    public void A6()
+    {
+
+    }
+
+    public void A7()
+    {
+
+    }
+
 }

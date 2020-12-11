@@ -22,8 +22,11 @@ public class EscapeButtonBehavior : MonoBehaviour
     
     public void OnEscapeButtonPressed() 
     {
-        SceneManager.LoadScene("GamePlayScene");
-        
+        int chance = Random.Range(1, 10);
+        if(chance < 3)
+        {
+            SceneManager.LoadScene("GamePlayScene");
+        }
     }
     
 
