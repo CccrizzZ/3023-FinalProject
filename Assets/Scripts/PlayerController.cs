@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
         } 
 
         // random encounter mechanism
-        if (Physics2D.OverlapCircle(transform.position, 0.1f, GrassLayer) != null && isMoving)
+        if (Physics2D.OverlapCircle(transform.position, 0.1f, GrassLayer) != null && rigidBody.velocity != Vector2.zero)
         {
             if (Time.frameCount % 60 == 0)
             {
