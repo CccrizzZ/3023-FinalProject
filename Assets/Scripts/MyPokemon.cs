@@ -6,6 +6,12 @@ using UnityEngine.UI;
 
 public class MyPokemon : MonoBehaviour
 {
+    [SerializeField]
+    public Text slap;
+    [SerializeField]
+    public Text kick;
+
+
     // References for ability
     public GameObject bubble;
     public GameObject laser;
@@ -147,18 +153,14 @@ public class MyPokemon : MonoBehaviour
     //abilities that can be randomly gained if winning the battle
     public void A5()
     {
-
+        slap.text = "slap!!";
     }
 
 
     public void A6()
     {
-
+        kick.text = "ahh!!";
     }
 
-    public void A7()
-    {
-
-    }
 
 }
